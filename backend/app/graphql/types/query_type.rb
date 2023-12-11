@@ -20,6 +20,11 @@ module Types
 
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
+    field :users, [Types::UserType], null: false,
+      description: "List Users"
+    def users
+      User.all
+    end
 
     # TODO: remove me
     field :test_field, String, null: false,
